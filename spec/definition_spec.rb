@@ -36,4 +36,25 @@ describe '#Definition' do
       expect(Definition.all).to(eq([definition, definition2]))
     end
   end
+
+  describe('.clear') do
+    it("clears all definitions") do
+      definition = Definition.new({:definition => "a large plant with leaves", :word_id => @word.id, :id => nil})
+      definition.save
+      definition2 = Definition.new({:definition => "a four-legged canine", :word_id => @word.id, :id => nil})
+      definition2.save
+      Definition.clear
+      expect(Definition.all).to(eq([]))
+    end
+  end
+
+  describe('.find') do
+    it("finds a definition by id") do
+      definition = Definition.new({:definition => "a large plant with leaves", :word_id => @word.id, :id => nil})
+      definition.save
+      definition2 = Definition.new({:definition => "a four-legged canine", :word_id => @word.id, :id => nil})
+      definition2.save
+      expect(Definition.find(definition.id)).to(eq(definition))
+    end
+  end
 end
