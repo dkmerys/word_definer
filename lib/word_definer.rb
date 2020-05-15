@@ -15,6 +15,7 @@ class Word
   def self.clear
     @@words = {}
     @@total_rows = 0
+  end
 
   def save
     @@words[self.id] = Word.new({:name => self.name, :id => self.id})
@@ -40,5 +41,4 @@ class Word
     array = @@words.values.select {|word| word.name == name}
     return array
   end
-end 
 end
