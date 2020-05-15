@@ -31,5 +31,9 @@ class Word
   def update(new_name)
     @name = new_name
   end
+
+  def delete
+    @@words.delete(self.id)
+  end
 end 
 end
