@@ -72,4 +72,14 @@ describe '#Word' do
       expect(Word.all).to(eq([word2]))
     end
   end
+
+  describe('.search') do
+    it("allows user to search for a word") do
+      word = Word.new({:name => "Tree", :id => nil})
+      word.save
+      word2 = Word.new({:name => "House", :id => nil})
+      word2.save
+      expect(Word.search(word.name)).to(eq([word]))
+    end
+  end
 end 
