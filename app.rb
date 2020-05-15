@@ -60,6 +60,13 @@ get('/words/:id/definitions/:definition_id') do
   erb(:definition)
 end
 
+post('/words/:id/definitions') do
+  @word = Word.find(params[:id].to_i())
+  definition = Definition.new(params[:new_def], @word.id, nil)
+  definition.save
+  erb(:word)
+end
+
 patch('/words/:id/definitions/:definition_id') do
   @word = Word.find(param[:id].to_i())
   definition = Definition.find(params[:definition_id].to_i())
