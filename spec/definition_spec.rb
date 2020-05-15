@@ -66,4 +66,15 @@ describe '#Definition' do
       expect(definition.definition).to(eq("a striped equine"))
     end
   end
+
+  describe('#delete') do
+    it("deletes a definition by id") do
+      definition = Definition.new({:definition => "a large plant with leaves", :word_id => @word.id, :id => nil})
+      definition.save
+      definition2 = Definition.new({:definition => "a four-legged canine", :word_id => @word.id, :id => nil})
+      definition2.save
+      definition.delete
+      expect(Definition.all).to(eq([definition2]))
+    end
+  end
 end
