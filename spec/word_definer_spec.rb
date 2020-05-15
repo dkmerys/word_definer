@@ -1,11 +1,13 @@
 require 'rspec'
 require 'pry'
 require 'word_definer'
+require 'definition'
 
 describe '#Word' do
 
   before(:each) do
     Word.clear
+    Definition.clear
   end
   
   describe('#save') do
@@ -80,6 +82,18 @@ describe '#Word' do
       word2 = Word.new({:name => "House", :id => nil})
       word2.save
       expect(Word.search(word.name)).to(eq([word]))
+    end
+  end
+
+  describe('#definitions') do
+    it("returns a word's definitions") do
+      word = Word.new({:name => "Tree", :id => nil})
+      word.save
+      definition = Definition.new({:definition => "a large plant with leaves", :word_id => word.id, :id => nil})
+      definition.save
+      definition2 = Definition.new({:definition => "a four-legged canine", :word_id => word.id, :id => nil})
+      definition2.save
+      expect(word.definitions).to(eq([definition, definition2]))
     end
   end
 end 

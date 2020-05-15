@@ -7,9 +7,9 @@
         <li><a href="/words/<%= @word.id %>/definitions/<%= definition.id %>"><%= definition.definition %></a></li>
       <% end %>
     </ul>
-    <% else %>
-      <p>There are no definitions for this word yet</p>
-    <% end %>
+  <% else %>
+    <p>There are no definitions for this word yet.</p>
+  <% end %>
 
 <h4>Add a definition</h4>
 <form action ="/words/<%= @word.id %>/definitions" method="post">

@@ -41,4 +41,8 @@ class Word
     array = @@words.values.select {|word| word.name == name}
     return array
   end
+
+  def definitions
+    Definition.find_by_word(self.id)
+  end
 end
