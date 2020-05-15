@@ -42,4 +42,14 @@ describe '#Word' do
     expect(word).to(eq(word2))
     end
   end
+
+  describe('.find') do
+    it("finds an word by id") do
+      word = Word.new({:name => "Tree", :id => nil})
+      word.save
+      word2 = Word.new({:name => "House", :id => nil})
+      word2.save
+      expect(Word.find(word.id)).to(eq(word))
+    end 
+  end
 end 
