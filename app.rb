@@ -54,3 +54,15 @@ delete('/words/:id') do
   @words = Word.all
   erb(:words)
 end
+
+get('/words/:id/definitions/:definition_id') do
+  @definition = Definition.find(params[:definition_id].to_i())
+  erb(:definition)
+end
+
+patch('/words/:id/definitions/:definition_id') do
+  @word = Word.find(param[:id].to_i())
+  definition = Definition.find(params[:definition_id].to_i())
+  definition.update(params[:edit_def], @word.id)
+  erb(:word)
+end
