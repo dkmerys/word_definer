@@ -29,5 +29,11 @@ class Definition
   def self.find(id)
     @@definitions[id]
   end
+  
+  def update(definition, word_id)
+    self.definition = definition
+    self.word_id = word_id
+    @@definitions[self.id] = Definition.new({:definition => self.definition, :word_id => self.word_id, :id => self.id})
+  end
 
 end
