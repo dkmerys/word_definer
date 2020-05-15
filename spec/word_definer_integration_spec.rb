@@ -37,3 +37,16 @@ describe('edit a definition path', {:type => :feature}) do
     expect(page).to have_content('brown trunk green leaves')
   end
 end
+
+describe('edit a definition path', {:type => :feature}) do
+  it('creates an word, goes to the definition page, then deletes a definition') do
+    word = Word.new({:name => "Tree", :id => nil})
+    word.save
+    visit("/words/#{word.id}")
+    fill_in('new_def', :with => 'a plant with a trunk')
+    click_on('Add definition')
+    click_on('a plant with a trunk')
+    click_on('Delete definition')
+    expect(page).to have_content('brown trunk green leaves')
+  end
+end
