@@ -35,5 +35,10 @@ class Word
   def delete
     @@words.delete(self.id)
   end
+
+  def self.search(name)
+    array = @@words.values.select {|word| word.name == name}
+    return array
+  end
 end 
 end
