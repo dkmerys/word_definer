@@ -34,4 +34,12 @@ describe '#Word' do
       expect(Word.all).to(eq([]))
     end
   end
+
+  describe('#==') do
+    it("is the same word if it has the same attributes as another word") do
+    word = Word.new({:name => "Tree", :id => nil})
+    word2 = Word.new({:name => "Tree", :id => nil})
+    expect(word).to(eq(word2))
+    end
+  end
 end 
