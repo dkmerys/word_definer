@@ -10,10 +10,16 @@ _This repository has the logic and spec files for the Word Definer application, 
 
 ## Setup/Installation Requirements
 
+There are 2 ways to view this application
+
 1. Clone this repository to your machine
 2. Install packages Ruby Gem by typing `$ bundle install` in the command line
 3. Run the application by typing `ruby word_definer.rb` in the command line
-4. Na
+4. Visit localhost: 4567 to begin using the app
+
+or
+
+1. Visit https://boiling-plains-04680.herokuapp.com/ to view the web-hosted version
 
 
 ## Known Bugs
@@ -32,10 +38,22 @@ Ruby
 Ruby Gems
 Sinatra
 Capybara
+Heroku
 
 ### Specs
 
-
+| Spec                                                                |
+|---------------------------------------------------------------------|
+| Will create a new Word object                                       |
+| Will save a Word object                                             |
+| Will allow user to update a Word object                             |
+| Will allow user to delete a Word object                             |
+| Will allow user to search from list of Word objects already created |
+| Will create a new Definition object                                 |
+| Will save a Definition object                                       |
+| Will allow user to update a Definition object                       |
+| Will allow user to delete a Definition object                       |
+| User can carry out actions via interface on web-hosted site         |
 
 ### License
 
