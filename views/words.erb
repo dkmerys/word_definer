@@ -2,7 +2,7 @@
 
 <h3>Words we have</h3>
 
-<% if @words.any? %>
+<% if @words %>
   <ul>
     <% @words.each do |word| %>
       <li><a href="/words/<%= word.id %>"><%= word.name%></a></li>

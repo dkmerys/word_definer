@@ -1,7 +1,6 @@
-<h2>Word: <%= @definition.word.definition %></h2>
 <h3>Definition: <%= @definition.definition %></h3>
 
-<form action="/words/<%= @definition.word.id %>/definitions<% @definition.id%>" method="post">
+<form action="/words/<%= @definition.word.id %>/definitions/<%= @definition.id%>" method="post">
   <input name="_method" type="hidden" value="patch">
 
   <label for="edit_def">Change Definition?</label>
@@ -10,8 +9,10 @@
   <button type="submit">Change</button>
 </form>
 
-<form action="/words/<%= @definition.word.id %>/definition/<%=@definition.id %>" method="post">
+<form action="/words/<%= @definition.word.id %>/definitions/<%= @definition.id %>" method="post">
   <input name="_method" type="hidden" value="delete">
 
   <button type="submit">Delete definition</button>
 </form>
+
+<a href="/words/<%= @definition.word.id %>">Back to <%= @definition.word.name %></a>

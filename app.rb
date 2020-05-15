@@ -70,6 +70,11 @@ get('/words/:id/definitions/:definition_id') do
   erb(:definition)
 end
 
+get('/words/:id/definitions') do
+  erb(:words)
+end
+
+
 post('/words/:id/definitions') do
   @word = Word.find(params[:id].to_i())
   definition = Definition.new(:definition => (params[:new_def]), :word_id => @word.id, :id =>nil)
@@ -78,15 +83,15 @@ post('/words/:id/definitions') do
 end
 
 patch('/words/:id/definitions/:definition_id') do
-  @word = Word.find(param[:id].to_i())
+  @word = Word.find(params[:id].to_i())
   definition = Definition.find(params[:definition_id].to_i())
   definition.update(params[:edit_def], @word.id)
-  erb(:word)
+  erb(:words)
 end
 
 delete('/words/:id/definitions/:definition_id') do
   definition = Definition.find(params[:definition_id].to_i())
   definition.delete
   @word = Word.find(params[:id].to_i())
-  erb(:album)
+  erb(:word)
 end
