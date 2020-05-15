@@ -40,3 +40,10 @@ get('/words/:id/edit') do
   @word = Word.find(params[:id].to_i())
   erb(:edit_word)
 end
+
+patch('/words/:id') do
+  @word = Word.find(params[:id].to_i())
+  @word.update(params[:new_name])
+  @words = Word.all
+  erb(:words)
+end
