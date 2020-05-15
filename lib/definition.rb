@@ -18,4 +18,12 @@ class Definition
     @@definitions.values
   end
 
+  def save
+    @@definitions[self.id] = Definition.new({:definition => self.definition, :word_id => self.word_id, :id => self.id})
+  end
+  
+  def self.clear
+    @@definitions = {}
+  end
+
 end
