@@ -33,11 +33,11 @@ _Have a bug or an issue with this application? [Open a new issue](https://github
 ## Technologies Used
 
 
-Git and GitHub
-Ruby
-Ruby Gems
-Sinatra
-Capybara
+Git and GitHub,
+Ruby,
+Ruby Gems,
+Sinatra,
+Capybara,
 Heroku
 
 ### Specs

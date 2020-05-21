@@ -38,7 +38,7 @@ class Word
   end
 
   def self.search(name)
-    array = @@words.values.select {|word| word.name == name}
+    array = @@words.values.select {|word| word.name.downcase == name.downcase}
     return array
   end
 
