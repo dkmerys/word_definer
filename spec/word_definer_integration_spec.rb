@@ -45,6 +45,8 @@ describe('edit a definition path', {:type => :feature}) do
     visit("/words/#{word.id}")
     fill_in('new_def', :with => 'a plant with a trunk')
     click_on('Add definition')
+    fill_in('new_def', :with => 'brown trunk green leaves')
+    click_on('Add definition')
     click_on('a plant with a trunk')
     click_on('Delete definition')
     expect(page).to have_content('brown trunk green leaves')
